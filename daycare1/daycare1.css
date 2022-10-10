@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&family=Shadows+Into+Light&display=swap');
+
+:root{
+    --clr-primary-200:#F1E2DD;
+    --clr-primary-300:  #aca095;
+    --clr-primary-400: #eff3f6;
+
+    --clr-neutral-500: #54493f;
+    --clr-neutral-900: #c6af92;
+
+    --ff-primary-200: 'Be Vietnam Pro', sans-serif;
+    --ff-accent-200: 'Montserrat', sans-serif;
+}
+
+img{
+    max-width: 100%;
+    display: block; 
+}
+.flex{
+    display: flex;
+    gap: var(--gap, 2rem);
+}
+.grid{
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    font-size: 2rem
+}
+.mobile-nav-toggle{
+    display:none;
+}
+.primary-header{
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+
+
+.primary-navigation{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+}
+.primary-navigation a{
+    text-decoration: none;
+    color: #000;
+}
+
+@media (max-width:35em){
+
+    .primary-header{
+        position: fixed;
+        background: rgba(255,255,255,0.5);
+        width: 100%;
+    }
+    
+    .primary-navigation{
+        position: fixed;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        --gap: 3rem;
+        z-index: 1000;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .primary-navigation[data-visible="true"]{
+        transform: translateX(0%);
+    }
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        position: fixed;
+        background-image:url("icons8-menu.svg");
+        background-color: transparent;
+        border: 0;
+        width: 2rem;
+        background-repeat: no-repeat;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"]{
+        background-image:url("x.svg");
+    }
+
+}
+
+.contact{
+    color: #000;
+    text-transform: lowercase;
+}
+
+body, h1, h2, h3, p{
+    margin: 0;
+}
+h1, h2, h3{
+    font-family: var(--ff-accent-200);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1em;
+    font-weight: 100;
+}
+h4{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    word-spacing: 1rem;
+}
+p{
+    margin-bottom: 2rem;
+}
+.margin-top-h2{
+    margin-top:2rem
+}
+.text-center{
+    text-align: center;
+}
+.text-title{
+    margin-bottom: 50px;
+}
+.line{
+    border-bottom: 2px solid rgb(235, 224, 224);
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -30px;
+    margin-bottom: 30px;  
+}
+
+body{
+    font-family: var(--clr-primary-200);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header,
+section{
+    padding: 4rem 0;
+}
+
+@media (min-width:40em){
+    header,
+section{
+    padding: 7rem 0;
+}
+.margin-top-h2{
+    margin-top:0rem
+}
+}
+
+
+.container{
+    margin-inline: auto;
+    width: min(90%, 70.5rem);
+}
+.container-narrow{
+    max-width: 35rem;
+}
+.split{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width:40em){
+    .split{
+        flex-direction: row;
+    }
+    .split >*{
+        flex-basis: 100%;
+    }
+    .split > * + * {
+        margin-left: 2em;
+    }
+}
+
+
+img{
+    object-fit: cover;
+}
+.text-red{
+    color: red;
+    padding: 20px 0;
+}
+.text-blue{
+    color: lightblue;
+    padding: 20px 0;
+}
+
+.text-blue-margin-top{
+    margin-top: 20px;
+}
+.text-purple{
+    color: purple;
+    padding: 20px 0;
+}
+.about-title{
+    padding: 20px;
+}
+@media (max-width:40rem){
+    .about-detail{
+        margin-top: 20px;
+    }
+}
+
+.contact span{
+    letter-spacing: 5px;
+}
+
+.bg-light{
+    background-color: var(--clr-primary-200);
+    background-image: url("environment/table-g33aa356e7_1280.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vmin;
+}
+
+
+.bg-light h1{
+    font-size: 5vmin;
+    font-weight: 900;
+    color: rgb(255,255,255,255);
+    margin-top: 150px;
+   
+}
+.bg-dark{
+    background-color: var(--clr-neutral-500);
+    color: #fff;
+}
+.bg-primary{
+    background-color: var(--clr-neutral-900);
+    color: #fff;
+}
